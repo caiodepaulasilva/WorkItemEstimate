@@ -1,0 +1,10 @@
+<div *ngIf="roomInfo; else noRoom">
+  <h2>Sala: {{ roomInfo.id }}</h2>
+  <p>Usuário: {{ roomInfo.user }}</p>
+  <!-- Seu conteúdo de votação aqui -->
+</div>
+
+<ng-template #noRoom>
+  <p class="error">Dados da sala não encontrados.</p>
+  <button (click)="redirectToLobby()">Voltar ao Lobby</button>
+</ng-template>

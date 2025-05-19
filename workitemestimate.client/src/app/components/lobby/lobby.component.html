@@ -1,0 +1,21 @@
+<form [formGroup]="lobbyForm" (ngSubmit)="joinRoom()">
+  <div>
+    <label for="username">Nome de usuário</label>
+    <input id="username"
+           formControlName="username"
+           placeholder="Ex: João">
+  </div>
+
+  <div>
+    <label for="roomId">ID da Sala</label>
+    <input id="roomId"
+           formControlName="roomId"
+           placeholder="Ex: sala-123">
+  </div>
+
+  <button type="submit"
+          [disabled]="!lobbyForm.valid"
+  >
+    Entrar na Sala
+  </button>
+</form>

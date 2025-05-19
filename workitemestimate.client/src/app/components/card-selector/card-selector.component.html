@@ -1,0 +1,27 @@
+<div class="card-selector">
+  <div class="strategy-selector">
+    <select [(ngModel)]="selectedStrategy" (change)="onStrategyChange()">
+      <option *ngFor="let strategy of strategies" [value]="strategy.key">
+        {{ strategy.name }}
+      </option>
+    </select>
+  </div>
+
+  <div class="cards-container">
+    <button *ngFor="let card of cards"
+            class="card"
+            (click)="selectCard(card)">
+      {{ card }}
+    </button>
+  </div>
+
+  <div class="vote-feedback">
+    <div *ngIf="selectedCard" class="your-vote">
+      <p>Seu voto: <strong>{{ selectedCard }}</strong></p>
+    </div>
+
+    <div *ngIf="receivedVote" class="others-vote">
+      <p>{{ receivedVote.user }} votou: <strong>{{ receivedVote.card }}</strong></p>
+    </div>
+  </div>
+</div>

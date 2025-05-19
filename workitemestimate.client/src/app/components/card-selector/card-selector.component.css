@@ -1,0 +1,51 @@
+/* Container principal */
+.card-container {
+  display: grid;  
+  gap: 16px;
+  padding: 16px;
+  width: 100%;  
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+}
+
+/* Cards individuais */
+.card {
+  flex: 0 0 100px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-radius: 8px;
+  height: 80px;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  gap: 16px;
+  padding: 16px;
+  margin: 2px !important;
+}
+
+  /* Efeito hover */
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+/* Garantindo que o host não cause problemas */
+:host {
+  display: block;
+  width: 100%;
+}
+
+.selected {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.selected-card-display {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+
+}
